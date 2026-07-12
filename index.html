@@ -1,34 +1,295 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>GRAID Zertifikatsdatenbank</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 0; background: #f5f5f5; color: #111; }
-    .wrap { max-width: 880px; margin: 0 auto; padding: 48px 20px; }
-    .card { background: white; border-radius: 16px; padding: 28px; box-shadow: 0 8px 24px rgba(0,0,0,.08); }
-    input { padding: 12px; width: 70%; max-width: 420px; font-size: 16px; }
-    button { padding: 13px 18px; font-size: 16px; cursor: pointer; }
-    .muted { color: #666; }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>GR8, Schnelles Card Grading aus Deutschland</title>
+<meta name="description" content="GR8. Trading Cards graden lassen. Bezahlbar, transparent und QR verifiziert. Professionelles Card Grading aus Deutschland." />
+<meta property="og:title" content="GR8, Card Grading aus Deutschland" />
+<meta property="og:description" content="Trading Cards graden lassen. Bezahlbar, transparent und QR verifiziert." />
+<meta property="og:type" content="website" />
+<link rel="icon" href="logo.webp" type="image/webp" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <main class="wrap">
-    <div class="card">
-      <h1>GRAID Zertifikatsdatenbank</h1>
-      <p class="muted">Gib eine Zertifikats-ID ein, um eine Karte zu prüfen.</p>
-      <input id="certId" placeholder="z. B. GRD-26-000001" />
-      <button onclick="go()">Prüfen</button>
-    </div>
-  </main>
+<div class="bg-orbs" aria-hidden="true">
+  <span class="orb orb-1"></span>
+  <span class="orb orb-2"></span>
+  <span class="orb orb-3"></span>
+</div>
 
-  <script>
-    function go() {
-      const id = document.getElementById("certId").value.trim();
-      if (!id) return;
-      window.location.href = "cert.html?id=" + encodeURIComponent(id);
-    }
-  </script>
+<header class="site-header">
+  <div class="container nav">
+    <a href="#top" class="logo">
+      <img src="logo.webp" alt="GR8 Logo" />
+      <span class="logo-word">
+        GR8
+        <small class="logo-sub">BY REPOKE</small>
+      </span>
+    </a>
+    <nav class="nav-links">
+      <a href="#vorteile">Vorteile</a>
+      <a href="#ablauf">So funktioniert es</a>
+      <a href="#preise">Preise</a>
+      <a href="#zertifikat">Zertifikat prüfen</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a href="https://buy.stripe.com/PLACEHOLDER" class="btn btn-primary btn-sm">Jetzt graden</a>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <span class="pill">
+        <span class="pulse"></span> Made in Germany
+      </span>
+      <h1>Schnelles Card Grading<br /><span class="gradient-text">aus Deutschland</span></h1>
+      <p class="lead">Trading Cards graden lassen. Bezahlbar, transparent und QR verifiziert.</p>
+      <div class="hero-cta">
+        <a href="https://buy.stripe.com/PLACEHOLDER" class="btn btn-primary btn-lg">Jetzt graden lassen →</a>
+        <a href="#zertifikat" class="btn btn-ghost btn-lg">Zertifikat prüfen</a>
+      </div>
+      <div class="hero-stats">
+        <div><strong>10 Tage</strong><span>Ø Bearbeitung</span></div>
+        <div><strong>ab 9 €</strong><span>pro Karte</span></div>
+        <div><strong>100%</strong><span>QR-verifiziert</span></div>
+      </div>
+    </div>
+
+    <!-- Sample certificate card -->
+    <div class="container cert-preview-wrap">
+      <div class="hero-visual" data-side="front">
+        <div class="hero-image-stack">
+          <img src="hero-graded-card.png" alt="Vorderseite der gegradeten GRAID Karte im Acryl-Slab" class="hero-image hero-image-front" />
+          <img src="hero-graded-card-back.png" alt="Rückseite der gegradeten GRAID Karte mit QR Code" class="hero-image hero-image-back" />
+        </div>
+        <div class="hero-overlays">
+          <!-- Callouts injected by script.js from central CALLOUTS config -->
+        </div>
+      </div>
+      <ul class="callout-mobile-list" aria-label="Merkmale der Karte"></ul>
+      <div class="side-toggle" role="tablist" aria-label="Karte drehen">
+        <button type="button" class="side-toggle-btn is-active" data-side="front" role="tab" aria-selected="true">Vorderseite</button>
+        <button type="button" class="side-toggle-btn" data-side="back" role="tab" aria-selected="false">Rückseite</button>
+        <span class="side-toggle-thumb" aria-hidden="true"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- VORTEILE -->
+  <section id="vorteile" class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Vorteile</span>
+        <h2>Warum GR8?</h2>
+        <div class="compare-chart-wrap glass" aria-label="Vergleich Bearbeitungszeit und Preis pro Karte">
+          <div class="compare-chart-head">
+            <h3>Grading im direkten Vergleich</h3>
+            <p>Bearbeitungszeit und Preis pro Karte im Vergleich.</p>
+          </div>
+          <div class="compare-chart" id="compare-chart">
+            <div class="cc-ylabel">Preis pro Karte in Euro</div>
+            <div class="cc-yaxis" aria-hidden="true"></div>
+            <div class="cc-plot" role="img" aria-label="Streudiagramm mit sechs Anbietern"></div>
+            <div class="cc-xaxis" aria-hidden="true"></div>
+            <div class="cc-xlabel">Bearbeitungszeit in Tagen</div>
+          </div>
+        </div>
+        <p>Professionelles Grading nach europäischen Standards, ohne Wartezeiten und ohne überzogene Preise.</p>
+      </div>
+      <div class="grid grid-3">
+        <div class="card glass">
+          <div class="icon">⚡</div>
+          <h3>Spezialisiert auf Pokemon</h3>
+          <p>
+</p>
+        </div>
+        <div class="card glass">
+          <div class="icon">€</div>
+          <h3>Faire Preise</h3>
+          <p>Transparente Preisstruktur ab 9 € inkl. Versicherung bei Lager und Rückversand bis 200€. <br />Und für nur 39€ Karten bis zu 500€ Versichern und analoges Zitat gratis dazu erhalten.</p>
+        </div>
+        <div class="card glass">
+          <div class="icon">🔒</div>
+          <h3>QR verifiziert</h3>
+          <p>Dank QR Code auf dem Slab lässt sich die Karte jederzeit per Smartphone Scan verifizieren. Der Scan führt direkt zum vollständigen Online Zertifikat auf unserer Webseite. Alternativ kann der Zertifikatscode manuell eingegeben und abgeglichen werden.</p>
+        </div>
+        <div class="card glass">
+          <div class="icon">🇩🇪</div>
+          <h3>Made in Germany</h3>
+          <p>Deine Karten erhalten wir und graden sie in wenigen Tagen. Kein wochenlanges Warten wie bei US-Anbietern. Bearbeitung, Versand und Support komplett aus Deutschland.</p>
+        </div>
+        <div class="card glass">
+          <div class="icon">🔬</div>
+          <h3>Präzise Bewertung</h3>
+          <p>Unsere Bewertung kombiniert KI gestützte Analyse mit einer zusätzlichen 4-Augen-Prüfung. Das sorgt für mehr Sicherheit, Transparenz und eine schnelle, zuverlässige Einschätzung.</p>
+        </div>
+        <div class="card glass">
+          <div class="icon">📦</div>
+          <h3>Hochwertiger Slab</h3>
+          <p>Wir verwenden kein PVC, das mit der Zeit vergilben oder brüchig werden kann. Stattdessen setzen wir auf UV beständiges Acryl. Es ist langlebig, klar und fühlt sich spürbar hochwertiger an.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABLAUF -->
+  <section id="ablauf" class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Ablauf</span>
+        <h2>So funktioniert es</h2>
+        <p>In vier einfachen Schritten von deiner Karte zum offiziellen GR8 Zertifikat.</p>
+      </div>
+      <ol class="timeline" aria-label="Ablauf in vier Schritten">
+        <div class="timeline-track" aria-hidden="true">
+          <div class="timeline-progress"></div>
+        </div>
+        <li class="timeline-item" style="--tl-delay:0s">
+          <div class="timeline-dot"><span>01</span></div>
+          <div class="timeline-card glass">
+            <span class="timeline-tag">Schritt 1</span>
+            <h3>Buchen</h3>
+            <p>Grading Paket direkt online buchen und bezahlen.</p>
+          </div>
+        </li>
+        <li class="timeline-item" style="--tl-delay:.15s">
+          <div class="timeline-dot"><span>02</span></div>
+          <div class="timeline-card glass">
+            <span class="timeline-tag">Schritt 2</span>
+            <h3>Einsenden</h3>
+            <p>Karten sicher verpacken und an uns senden.</p>
+          </div>
+        </li>
+        <li class="timeline-item" style="--tl-delay:.3s">
+          <div class="timeline-dot"><span>03</span></div>
+          <div class="timeline-card glass">
+            <span class="timeline-tag">Schritt 3</span>
+            <h3>Graden</h3>
+            <p>Unsere Experten bewerten und versiegeln deine Karte.</p>
+          </div>
+        </li>
+        <li class="timeline-item" style="--tl-delay:.45s">
+          <div class="timeline-dot"><span>04</span></div>
+          <div class="timeline-card glass">
+            <span class="timeline-tag">Schritt 4</span>
+            <h3>Zurück</h3>
+            <p>Du erhältst deine gegradete Karte mit QR Zertifikat.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- PREISE -->
+  <section id="preise" class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Preise</span>
+        <h2>Transparente Preise</h2>
+        <p>Wähle das Paket, das zu dir passt. Alle Preise inkl. Slab und Zertifikat.</p>
+      </div>
+      <div class="grid grid-3 pricing">
+        <div class="price-card glass">
+          <h3>Standard</h3>
+          <div class="price"><span>9 €</span><small>/ Karte</small></div>
+          <ul>
+            <li>Bearbeitung 2 bis 4 Wochen</li>
+            <li>Zertifikat (digital)</li>
+            <li>Versichert </li>
+            <li>Kartenwert bis 200 €</li>
+          </ul>
+          <a href="https://buy.stripe.com/PLACEHOLDER" class="btn btn-outline">Auswählen</a>
+        </div>
+        <div class="price-card glass featured">
+          <span class="badge">Beliebt</span>
+          <h3>Express</h3>
+          <div class="price"><span>19 €</span><small>/ Karte</small></div>
+          <ul>
+            <li>Bearbeitung 7 bis 14 Tage</li>
+            <li>Zertifikat (digital)</li>
+            <li>Versichert</li>
+            <li>Kartenwert bis max. 200 €</li>
+          </ul>
+          <a href="https://buy.stripe.com/PLACEHOLDER" class="btn btn-primary">Jetzt graden lassen</a>
+        </div>
+        <div class="price-card glass">
+          <h3>High Value</h3>
+          <div class="price"><span>39 €</span><small>/ Karte</small></div>
+          <ul>
+            <li>Bearbeitung 7 bis 14 Tage</li>
+            <li>Zertifikat (digital + analog)</li>
+            <li>Versichert</li>
+            <li>Kartenwert bis max. 500 €</li>
+          </ul>
+          <a href="https://buy.stripe.com/PLACEHOLDER" class="btn btn-outline">Auswählen</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ZERTIFIKAT PRÜFEN -->
+  <section id="zertifikat" class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Verifikation</span>
+        <h2>Zertifikat prüfen</h2>
+        <p>Gib deine Zertifikats ID ein (z. B. <code>GRD-26-000001</code>), um Details zu deiner Karte anzuzeigen.</p>
+      </div>
+      <div class="verify glass">
+        <form id="verify-form" class="verify-form">
+          <input type="text" id="cert-input" placeholder="GRD-26-000001" autocomplete="off" />
+          <button type="submit" class="btn btn-primary">Prüfen</button>
+        </form>
+        <div id="verify-result" class="verify-result"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">FAQ</span>
+        <h2>Häufige Fragen</h2>
+      </div>
+      <div class="faq">
+        <details class="glass"><summary>Wie lange dauert das Grading?</summary><p>Je nach Paket zwischen 7 Tagen (Express) und 4 Wochen (Standard).</p></details>
+        <details class="glass"><summary>Welche Karten könnt ihr graden?</summary><p>Wir graden alle gängigen TCGs wie Pokémon, Magic, Yu-Gi-Oh, One Piece und mehr.</p></details>
+        <details class="glass"><summary>Wie funktioniert das QR Zertifikat?</summary><p>Jede gegradete Karte erhält einen QR Code. Beim Scannen öffnet sich die offizielle Zertifikatsseite, so kann jeder Käufer die Echtheit prüfen.</p></details>
+        <details class="glass"><summary>Wie versichert ihr meine Karten?</summary><p>Alle Sendungen sind versichert. Bei High-Value-Karten bieten wir zusätzlichen Versicherungsschutz.</p></details>
+        <details class="glass"><summary>Kann ich die Grades einsehen?</summary><p>Ja, Centering, Condition und Print werden separat ausgewiesen und sind auf deinem Zertifikat transparent nachvollziehbar.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="section cta-section">
+    <div class="container">
+      <div class="cta-box glass">
+        <h2>Bereit, deine Karte zu graden?</h2>
+        <p>Starte jetzt und erhalte dein GR8 Zertifikat mit QR Verifikation.</p>
+        <a href="https://buy.stripe.com/PLACEHOLDER" class="btn btn-primary btn-lg">Jetzt graden lassen →</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="logo">
+      <img src="logo.webp" alt="GR8 Logo" />
+      <span>GR8</span>
+    </div>
+    <p>© <span id="year"></span> GR8, Card Grading aus Deutschland. Alle Rechte vorbehalten.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
