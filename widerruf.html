@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Widerruf und Musterformular | GR8 Card Grading</title>
   <meta name="description" content="Widerrufsbelehrung und Muster-Widerrufsformular des GR8 Card-Grading-Service." />
+  <link rel="icon" href="logo.webp" type="image/webp" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
   <style>
 :root {
   color-scheme: dark;
@@ -101,15 +106,31 @@ input:focus, textarea:focus { outline: 2px solid rgba(143,124,255,.65); outline-
   
 </head>
 <body>
-  <header class="topbar">
-    <div class="topbar-inner">
-      <a class="brand" href="index.html"><span class="brand-mark">GR8</span><span>GR8 Card Grading</span></a>
-      <nav class="topnav" aria-label="Hauptnavigation"><a href="index.html">Startseite</a>
-<a href="agb.html">AGB</a>
-<a href="widerruf.html" aria-current="page">Widerruf</a>
-<a href="impressum.html">Impressum</a></nav>
-    </div>
-  </header>
+<div class="bg-orbs" aria-hidden="true">
+  <span class="orb orb-1"></span>
+  <span class="orb orb-2"></span>
+  <span class="orb orb-3"></span>
+</div>
+
+<header class="site-header">
+  <div class="container nav">
+    <a href="index.html#top" class="logo">
+      <img src="logo.webp" alt="GR8 Logo" />
+      <span class="logo-word">
+        GR8
+        <small class="logo-sub">BY REPOKE</small>
+      </span>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html#vorteile">Vorteile</a>
+      <a href="index.html#ablauf">So funktioniert es</a>
+      <a href="index.html#preise">Preise</a>
+      <a href="index.html#zertifikat">Zertifikat prüfen</a>
+      <a href="index.html#faq">FAQ</a>
+    </nav>
+    <a href="https://buy.stripe.com/PLACEHOLDER" class="btn btn-primary btn-sm">Jetzt graden</a>
+  </div>
+</header>
   <main>
 <section class="hero">
   <span class="kicker">Verbraucherinformationen</span>
@@ -137,10 +158,11 @@ input:focus, textarea:focus { outline: 2px solid rgba(143,124,255,.65); outline-
   <p>Zur Wahrung der Widerrufsfrist reicht es aus, dass Sie die Mitteilung über die Ausübung des Widerrufsrechts vor Ablauf der Widerrufsfrist absenden.</p>
 
   <h3>Folgen des Widerrufs</h3>
-  <p>Wenn Sie diesen Vertrag widerrufen, haben wir Ihnen alle Zahlungen, die wir von Ihnen erhalten haben, einschließlich der Lieferkosten – mit Ausnahme zusätzlicher Kosten, die sich daraus ergeben, dass Sie eine andere Art der Lieferung als die von uns angebotene günstigste Standardlieferung gewählt haben – unverzüglich und spätestens binnen vierzehn Tagen ab dem Tag zurückzuzahlen, an dem die Mitteilung über Ihren Widerruf bei uns eingegangen ist.</p>
+  <p>Wenn Sie diesen Vertrag widerrufen, haben wir Ihnen alle Zahlungen, die wir von Ihnen für den widerrufenen Vertrag erhalten haben, unverzüglich und spätestens binnen vierzehn Tagen ab dem Tag zurückzuzahlen, an dem die Mitteilung über Ihren Widerruf bei uns eingegangen ist.</p>
+  <p>Die Kosten Ihrer ursprünglichen Einsendung der Karte an das Gradingzentrum werden nicht von uns erstattet, da Sie diese unmittelbar an den von Ihnen gewählten Versanddienstleister zahlen. Der reguläre Rückversand einer bereits bei uns befindlichen Karte an Sie wird von uns übernommen.</p>
   <p>Für die Rückzahlung verwenden wir dasselbe Zahlungsmittel, das Sie bei der ursprünglichen Transaktion eingesetzt haben, sofern nicht ausdrücklich etwas anderes vereinbart wurde. Wegen dieser Rückzahlung werden Ihnen keine Entgelte berechnet.</p>
   <p>Haben Sie verlangt, dass die Dienstleistung während der Widerrufsfrist beginnen soll, haben Sie uns einen angemessenen Betrag zu zahlen. Dieser entspricht dem Anteil der bis zu dem Zeitpunkt, zu dem Sie uns über die Ausübung des Widerrufsrechts unterrichten, bereits erbrachten Leistungen im Vergleich zum Gesamtumfang der im Vertrag vorgesehenen Leistungen.</p>
-  <p>Befindet sich Ihre Karte bei Zugang des Widerrufs bereits bei uns, stimmen wir die sichere Rücksendung mit Ihnen ab. Erforderliche Rücksendekosten sowie ein gesetzlich geschuldeter Wertersatz können berücksichtigt werden.</p>
+  <p>Befindet sich Ihre Karte bei Zugang des Widerrufs bereits bei uns, stimmen wir die sichere Rücksendung mit Ihnen ab und übernehmen die Kosten des regulären Rückversands. Ein gesetzlich geschuldeter Wertersatz für bereits erbrachte Leistungen kann berücksichtigt werden.</p>
 
   <h3>Vorzeitiges Erlöschen des Widerrufsrechts</h3>
   <p>Bei einem Vertrag über eine kostenpflichtige Dienstleistung erlischt das Widerrufsrecht mit der vollständigen Erbringung der Dienstleistung, wenn Sie vor Beginn der Leistung ausdrücklich zugestimmt haben, dass wir vor Ablauf der Widerrufsfrist mit der Dienstleistung beginnen, und Sie bestätigt haben, dass Ihnen bekannt ist, dass Ihr Widerrufsrecht mit vollständiger Vertragserfüllung erlischt.</p>

@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Allgemeine Geschäftsbedingungen | GR8 Card Grading</title>
   <meta name="description" content="AGB des GR8 Card-Grading-Service." />
+  <link rel="icon" href="logo.webp" type="image/webp" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
   <style>
 :root {
   color-scheme: dark;
@@ -101,15 +106,31 @@ input:focus, textarea:focus { outline: 2px solid rgba(143,124,255,.65); outline-
   
 </head>
 <body>
-  <header class="topbar">
-    <div class="topbar-inner">
-      <a class="brand" href="index.html"><span class="brand-mark">GR8</span><span>GR8 Card Grading</span></a>
-      <nav class="topnav" aria-label="Hauptnavigation"><a href="index.html">Startseite</a>
-<a href="agb.html" aria-current="page">AGB</a>
-<a href="widerruf.html">Widerruf</a>
-<a href="impressum.html">Impressum</a></nav>
-    </div>
-  </header>
+<div class="bg-orbs" aria-hidden="true">
+  <span class="orb orb-1"></span>
+  <span class="orb orb-2"></span>
+  <span class="orb orb-3"></span>
+</div>
+
+<header class="site-header">
+  <div class="container nav">
+    <a href="index.html#top" class="logo">
+      <img src="logo.webp" alt="GR8 Logo" />
+      <span class="logo-word">
+        GR8
+        <small class="logo-sub">BY REPOKE</small>
+      </span>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html#vorteile">Vorteile</a>
+      <a href="index.html#ablauf">So funktioniert es</a>
+      <a href="index.html#preise">Preise</a>
+      <a href="index.html#zertifikat">Zertifikat prüfen</a>
+      <a href="index.html#faq">FAQ</a>
+    </nav>
+    <a href="https://buy.stripe.com/PLACEHOLDER" class="btn btn-primary btn-sm">Jetzt graden</a>
+  </div>
+</header>
   <main>
 <section class="hero">
   <span class="kicker">Rechtliche Informationen</span>
@@ -148,7 +169,8 @@ input:focus, textarea:focus { outline: 2px solid rgba(143,124,255,.65); outline-
 <section class="panel">
   <h2>4. Preise und Zahlung</h2>
   <ol>
-    <li>Es gelten die im Bestellprozess angezeigten Gesamtpreise. Zusätzlich anfallende Versand-, Verpackungs-, Versicherungs- oder sonstige Kosten werden vor Abgabe der Bestellung angezeigt.</li>
+    <li>Es gelten die im Bestellprozess angezeigten Gesamtpreise. Die Kosten der Einsendung der Karten an das Gradingzentrum trägt der Kunde und bezahlt sie an den von ihm gewählten Versanddienstleister. Der reguläre Rückversand vom Gradingzentrum an die im Auftrag angegebene Lieferanschrift wird vom Anbieter übernommen und ist im Leistungspreis enthalten.</li>
+    <li>Nur ausdrücklich gewählte Zusatzleistungen, insbesondere eine abweichende Versandart, ein erhöhter Versicherungsschutz oder ein Versand außerhalb des angebotenen Standardliefergebiets, können gesondert berechnet werden. Solche Zusatzkosten werden vor Abgabe der Bestellung angezeigt.</li>
     <li>Die verfügbaren Zahlungsmethoden ergeben sich aus dem Bestellprozess. Soweit nichts anderes vereinbart ist, ist die Vergütung mit Vertragsschluss fällig.</li>
     <li>Der Anbieter darf die Bearbeitung bis zum Eingang einer fälligen Zahlung zurückstellen.</li>
   </ol>
@@ -157,18 +179,18 @@ input:focus, textarea:focus { outline: 2px solid rgba(143,124,255,.65); outline-
 <section class="panel">
   <h2>5. Einsendung und Mitwirkungspflichten des Kunden</h2>
   <ol>
-    <li>Der Kunde sendet die Karten nach den bereitgestellten Versandhinweisen und unter Angabe der Bestell- oder Auftragsnummer ein.</li>
+    <li>Der Kunde sendet die Karten auf eigene Kosten nach den bereitgestellten Versandhinweisen und unter Angabe der Bestell- oder Auftragsnummer an das Gradingzentrum ein.</li>
     <li>Der Kunde ist für eine stabile, feuchtigkeitsgeschützte und dem Kartenwert angemessene Verpackung verantwortlich. Eine nachverfolgbare und ausreichend versicherte Versandart wird empfohlen.</li>
     <li>Bis zum tatsächlichen Eingang beim Anbieter trägt der Kunde das Risiko der von ihm veranlassten Einsendung nach den gesetzlichen Bestimmungen.</li>
     <li>Der Kunde versichert, Eigentümer der Karten oder zur Beauftragung berechtigt zu sein. Rechtswidrige, gefährliche, feuchte, verschimmelte oder gesundheitsgefährdend verunreinigte Gegenstände dürfen nicht eingesandt werden.</li>
-    <li>Notwendige Angaben zur Karte, zum Kartenhalter, zum Rückversand und zu einem gewünschten Versicherungsschutz müssen vollständig und richtig gemacht werden.</li>
+    <li>Notwendige Angaben zur Karte, zum Kartenhalter, zur Lieferanschrift und zu einem gewünschten zusätzlichen Versicherungsschutz müssen vollständig und richtig gemacht werden.</li>
   </ol>
 </section>
 
 <section class="panel">
   <h2>6. Annahme und Ablehnung eingesandter Karten</h2>
   <p>Der Anbieter kann eine Bearbeitung ablehnen, wenn die Karte nicht vom angebotenen Leistungsumfang erfasst ist, eine sichere Bearbeitung nicht möglich ist, erforderliche Angaben oder Zahlungen fehlen, ein konkreter Verdacht auf eine Fälschung oder unzulässige Reproduktion besteht oder die Sendung Personen, Betriebsmittel oder andere Gegenstände gefährden kann.</p>
-  <p>In diesem Fall wird der Kunde informiert. Die Karte wird nach Abstimmung zurückgesandt. Gesetzlich oder vertraglich geschuldete Prüf-, Verpackungs- und Versandkosten können berechnet werden.</p>
+  <p>In diesem Fall wird der Kunde informiert. Die Karte wird nach Abstimmung auf Kosten des Anbieters an den Kunden zurückgesandt. Bereits rechtmäßig erbrachte und kostenpflichtige Prüf- oder Zusatzleistungen können nach den gesetzlichen und vertraglichen Voraussetzungen berechnet werden.</p>
 </section>
 
 <section class="panel">
@@ -199,10 +221,11 @@ input:focus, textarea:focus { outline: 2px solid rgba(143,124,255,.65); outline-
 </section>
 
 <section class="panel">
-  <h2>10. Rücksendung</h2>
+  <h2>10. Rückversand</h2>
   <ol>
     <li>Nach Abschluss der Leistung wird die Karte an die im Auftrag angegebene Anschrift zurückgesandt.</li>
-    <li>Versandart, Kosten und vereinbarter Transportversicherungsschutz ergeben sich aus der Bestellung. Eine vom Kunden angegebene Wertschätzung ist keine Anerkennung eines objektiven Markt- oder Ersatzwertes.</li>
+    <li>Die Kosten des regulären Rückversands vom Gradingzentrum zum Kunden übernimmt der Anbieter. Der reguläre Rückversand ist im vereinbarten Leistungspreis enthalten.</li>
+    <li>Versandart und vereinbarter Transportversicherungsschutz ergeben sich aus der Bestellung. Eine vom Kunden angegebene Wertschätzung ist keine Anerkennung eines objektiven Markt- oder Ersatzwertes.</li>
     <li>Kann eine Sendung wegen einer vom Kunden zu vertretenden unrichtigen Anschrift, Nichtannahme oder unterlassenen Abholung nicht zugestellt werden, können die notwendigen Kosten eines erneuten Versands verlangt werden.</li>
     <li>Der Kunde sollte äußerlich erkennbare Transportschäden unverzüglich dokumentieren und melden. Gesetzliche Rechte werden durch eine unterlassene Meldung nicht eingeschränkt.</li>
   </ol>
