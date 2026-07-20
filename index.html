@@ -13,6 +13,45 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="style.css" />
+<style>
+  .site-footer .footer-inner {
+    gap: 18px;
+    flex-wrap: wrap;
+  }
+  .footer-legal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px 18px;
+    margin-left: auto;
+  }
+  .footer-legal a {
+    color: inherit;
+    font-size: 0.92rem;
+    font-weight: 600;
+    opacity: 0.82;
+    text-decoration: none;
+    transition: opacity .2s ease, transform .2s ease;
+  }
+  .footer-legal a:hover,
+  .footer-legal a:focus-visible {
+    opacity: 1;
+    transform: translateY(-1px);
+  }
+  .footer-legal .footer-withdraw-link {
+    padding: 8px 12px;
+    border: 1px solid rgba(255,255,255,.22);
+    border-radius: 999px;
+  }
+  @media (max-width: 760px) {
+    .site-footer .footer-inner {
+      flex-direction: column;
+      text-align: center;
+    }
+    .footer-legal { margin-left: 0; }
+  }
+</style>
 </head>
 <body>
 <div class="bg-orbs" aria-hidden="true">
@@ -287,6 +326,11 @@
       <span>GR8</span>
     </div>
     <p>© <span id="year"></span> GR8, Card Grading aus Deutschland. Alle Rechte vorbehalten.</p>
+    <nav class="footer-legal" aria-label="Rechtliche Informationen">
+      <a href="agb.html">AGB</a>
+      <a href="widerruf.html" class="footer-withdraw-link">Widerruf &amp; Formular</a>
+      <a href="impressum.html">Impressum</a>
+    </nav>
   </div>
 </footer>
 

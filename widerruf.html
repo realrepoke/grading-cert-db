@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Widerruf und Musterformular | GR8 Card Grading</title>
+  <meta name="description" content="Widerrufsbelehrung und Muster-Widerrufsformular des GR8 Card-Grading-Service." />
+  <style>
+:root {
+  color-scheme: dark;
+  --bg: #07090f;
+  --panel: rgba(255,255,255,.055);
+  --panel-strong: rgba(255,255,255,.085);
+  --border: rgba(255,255,255,.13);
+  --text: #f4f6fb;
+  --muted: #aab1c0;
+  --accent: #8f7cff;
+  --accent-2: #43d7c7;
+  --warning: #ffd88a;
+  --max: 980px;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 10% 0%, rgba(143,124,255,.19), transparent 32rem),
+    radial-gradient(circle at 95% 18%, rgba(67,215,199,.12), transparent 28rem),
+    var(--bg);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.68;
+}
+a { color: #c8c0ff; }
+a:hover { color: #fff; }
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(7,9,15,.82);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(16px);
+}
+.topbar-inner, main, .legal-footer-inner { width: min(calc(100% - 36px), var(--max)); margin: 0 auto; }
+.topbar-inner { min-height: 70px; display: flex; align-items: center; justify-content: space-between; gap: 22px; }
+.brand { display: inline-flex; align-items: center; gap: 10px; color: var(--text); text-decoration: none; font-weight: 900; letter-spacing: -.03em; font-size: 1.25rem; }
+.brand-mark { display: grid; place-items: center; width: 38px; height: 38px; border-radius: 12px; background: linear-gradient(135deg, var(--accent), var(--accent-2)); color: #080a10; font-size: .88rem; }
+.topnav { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 7px 16px; }
+.topnav a { color: var(--muted); text-decoration: none; font-size: .9rem; font-weight: 700; }
+.topnav a[aria-current="page"] { color: #fff; }
+main { padding: 72px 0 88px; }
+.hero { margin-bottom: 30px; }
+.kicker { display: inline-flex; padding: 7px 11px; border: 1px solid var(--border); border-radius: 999px; color: #d9d4ff; background: var(--panel); font-size: .78rem; font-weight: 800; text-transform: uppercase; letter-spacing: .1em; }
+h1 { max-width: 820px; margin: 20px 0 12px; font-size: clamp(2.2rem, 7vw, 4.6rem); line-height: .98; letter-spacing: -.055em; }
+.lead { max-width: 760px; margin: 0; color: var(--muted); font-size: 1.08rem; }
+.meta { margin-top: 18px; color: var(--muted); font-size: .88rem; }
+.notice { margin: 26px 0; padding: 18px 20px; border: 1px solid rgba(255,216,138,.35); background: rgba(255,216,138,.075); border-radius: 16px; color: #ffe9b9; }
+.panel { margin: 18px 0; padding: clamp(22px, 4vw, 38px); border: 1px solid var(--border); background: var(--panel); border-radius: 24px; box-shadow: 0 20px 70px rgba(0,0,0,.24); }
+h2 { margin: 0 0 16px; font-size: clamp(1.35rem, 4vw, 2rem); letter-spacing: -.035em; }
+h3 { margin: 28px 0 8px; font-size: 1.08rem; }
+p { margin: 0 0 14px; }
+ol, ul { padding-left: 1.3rem; }
+li + li { margin-top: 7px; }
+address { font-style: normal; }
+.data-grid { display: grid; grid-template-columns: minmax(150px, .38fr) 1fr; gap: 10px 22px; }
+.data-grid dt { color: var(--muted); font-weight: 700; }
+.data-grid dd { margin: 0; }
+.action-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 22px; }
+.button { display: inline-flex; align-items: center; justify-content: center; min-height: 46px; padding: 0 17px; border: 1px solid var(--border); border-radius: 12px; background: var(--panel-strong); color: #fff; font-weight: 800; text-decoration: none; cursor: pointer; }
+.button.primary { border: 0; color: #07090f; background: linear-gradient(135deg, var(--accent), var(--accent-2)); }
+form { display: grid; gap: 16px; }
+.field { display: grid; gap: 7px; }
+label { font-weight: 800; }
+input, textarea { width: 100%; border: 1px solid var(--border); border-radius: 12px; background: rgba(0,0,0,.23); color: #fff; padding: 13px 14px; font: inherit; }
+textarea { min-height: 120px; resize: vertical; }
+input:focus, textarea:focus { outline: 2px solid rgba(143,124,255,.65); outline-offset: 2px; }
+.checkbox { display: grid; grid-template-columns: auto 1fr; align-items: start; gap: 10px; }
+.checkbox input { width: 18px; height: 18px; margin-top: 4px; }
+.form-status { display: none; padding: 14px; border-radius: 12px; background: rgba(67,215,199,.1); border: 1px solid rgba(67,215,199,.3); color: #baf7ee; }
+.legal-footer { border-top: 1px solid var(--border); }
+.legal-footer-inner { min-height: 100px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 18px; color: var(--muted); font-size: .88rem; }
+.legal-footer nav { display: flex; flex-wrap: wrap; gap: 12px 18px; }
+.legal-footer a { color: var(--muted); text-decoration: none; font-weight: 700; }
+@media (max-width: 700px) {
+  .topbar-inner { padding: 14px 0; align-items: flex-start; flex-direction: column; }
+  .topnav { justify-content: flex-start; }
+  main { padding-top: 48px; }
+  .data-grid { grid-template-columns: 1fr; gap: 3px; }
+  .data-grid dd { margin-bottom: 12px; }
+  .legal-footer-inner { padding: 24px 0; align-items: flex-start; flex-direction: column; }
+}
+@media print {
+  .topbar, .legal-footer, .action-row, .notice.setup-note { display: none !important; }
+  body { color: #000; background: #fff; }
+  main { width: 100%; padding: 0; }
+  .panel { border: 0; box-shadow: none; padding: 0; }
+  h1 { font-size: 30pt; }
+}
+</style>
+  
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="index.html"><span class="brand-mark">GR8</span><span>GR8 Card Grading</span></a>
+      <nav class="topnav" aria-label="Hauptnavigation"><a href="index.html">Startseite</a>
+<a href="agb.html">AGB</a>
+<a href="widerruf.html" aria-current="page">Widerruf</a>
+<a href="impressum.html">Impressum</a></nav>
+    </div>
+  </header>
+  <main>
+<section class="hero">
+  <span class="kicker">Verbraucherinformationen</span>
+  <h1>Widerruf &amp; Musterformular</h1>
+  <p class="lead">Informationen zum gesetzlichen Widerrufsrecht bei der Buchung einer GR8-Grading-Dienstleistung.</p>
+  <p class="meta">Stand: 20. Juli 2026</p>
+</section>
+
+<div class="notice setup-note"><strong>Technischer Hinweis:</strong> Vor Veröffentlichung muss die E-Mail-Adresse <code>RECHT@IHRE-DOMAIN.DE</code> in dieser Datei ersetzt werden. Für eine vollständig elektronische Widerrufsfunktion mit automatischer Eingangsbestätigung ist zusätzlich eine serverseitige Formularverarbeitung erforderlich.</div>
+
+<section class="panel">
+  <h2>Widerrufsbelehrung</h2>
+  <h3>Widerrufsrecht</h3>
+  <p>Sie haben das Recht, binnen vierzehn Tagen ohne Angabe von Gründen diesen Vertrag zu widerrufen.</p>
+  <p>Die Widerrufsfrist beträgt vierzehn Tage ab dem Tag des Vertragsschlusses.</p>
+  <p>Um Ihr Widerrufsrecht auszuüben, müssen Sie uns</p>
+  <address>
+    <strong>FUCODE Projects – Future Consulting & Development Unternehmergesellschaft (haftungsbeschränkt)</strong><br />
+    Levetzowstraße 11a<br />
+    10555 Berlin<br />
+    Deutschland<br />
+    E-Mail: <a href="mailto:RECHT@IHRE-DOMAIN.DE">RECHT@IHRE-DOMAIN.DE</a>
+  </address>
+  <p>mittels einer eindeutigen Erklärung, beispielsweise eines mit der Post versandten Briefs oder einer E-Mail, über Ihren Entschluss informieren, diesen Vertrag zu widerrufen. Sie können dafür das nachstehende Muster-Widerrufsformular verwenden, das jedoch nicht vorgeschrieben ist.</p>
+  <p>Zur Wahrung der Widerrufsfrist reicht es aus, dass Sie die Mitteilung über die Ausübung des Widerrufsrechts vor Ablauf der Widerrufsfrist absenden.</p>
+
+  <h3>Folgen des Widerrufs</h3>
+  <p>Wenn Sie diesen Vertrag widerrufen, haben wir Ihnen alle Zahlungen, die wir von Ihnen erhalten haben, einschließlich der Lieferkosten – mit Ausnahme zusätzlicher Kosten, die sich daraus ergeben, dass Sie eine andere Art der Lieferung als die von uns angebotene günstigste Standardlieferung gewählt haben – unverzüglich und spätestens binnen vierzehn Tagen ab dem Tag zurückzuzahlen, an dem die Mitteilung über Ihren Widerruf bei uns eingegangen ist.</p>
+  <p>Für die Rückzahlung verwenden wir dasselbe Zahlungsmittel, das Sie bei der ursprünglichen Transaktion eingesetzt haben, sofern nicht ausdrücklich etwas anderes vereinbart wurde. Wegen dieser Rückzahlung werden Ihnen keine Entgelte berechnet.</p>
+  <p>Haben Sie verlangt, dass die Dienstleistung während der Widerrufsfrist beginnen soll, haben Sie uns einen angemessenen Betrag zu zahlen. Dieser entspricht dem Anteil der bis zu dem Zeitpunkt, zu dem Sie uns über die Ausübung des Widerrufsrechts unterrichten, bereits erbrachten Leistungen im Vergleich zum Gesamtumfang der im Vertrag vorgesehenen Leistungen.</p>
+  <p>Befindet sich Ihre Karte bei Zugang des Widerrufs bereits bei uns, stimmen wir die sichere Rücksendung mit Ihnen ab. Erforderliche Rücksendekosten sowie ein gesetzlich geschuldeter Wertersatz können berücksichtigt werden.</p>
+
+  <h3>Vorzeitiges Erlöschen des Widerrufsrechts</h3>
+  <p>Bei einem Vertrag über eine kostenpflichtige Dienstleistung erlischt das Widerrufsrecht mit der vollständigen Erbringung der Dienstleistung, wenn Sie vor Beginn der Leistung ausdrücklich zugestimmt haben, dass wir vor Ablauf der Widerrufsfrist mit der Dienstleistung beginnen, und Sie bestätigt haben, dass Ihnen bekannt ist, dass Ihr Widerrufsrecht mit vollständiger Vertragserfüllung erlischt.</p>
+  <p><strong>Der Versand Ihrer Karte, der Eingang der Karte bei uns oder das Hinterlegen einer Sendungsnummer führen für sich genommen nicht zum Erlöschen des Widerrufsrechts.</strong></p>
+</section>
+
+<section class="panel" id="formular">
+  <h2>Muster-Widerrufsformular</h2>
+  <p>Füllen Sie das Formular aus und übermitteln Sie die Erklärung per E-Mail oder Post. Das Formular ist freiwillig; eine andere eindeutige Erklärung genügt ebenfalls.</p>
+  <form id="withdrawal-form" action="mailto:RECHT@IHRE-DOMAIN.DE" method="post" enctype="text/plain">
+    <div class="field">
+      <label for="name">Name des Verbrauchers</label>
+      <input id="name" name="Name" autocomplete="name" required />
+    </div>
+    <div class="field">
+      <label for="address">Anschrift</label>
+      <textarea id="address" name="Anschrift" autocomplete="street-address" required></textarea>
+    </div>
+    <div class="field">
+      <label for="email">E-Mail-Adresse</label>
+      <input id="email" name="E-Mail" type="email" autocomplete="email" required />
+    </div>
+    <div class="field">
+      <label for="order">Bestell- oder Auftragsnummer</label>
+      <input id="order" name="Bestellnummer" required />
+    </div>
+    <div class="field">
+      <label for="ordered">Bestellt am</label>
+      <input id="ordered" name="Bestellt am" type="date" required />
+    </div>
+    <div class="field">
+      <label for="service">Betroffene Dienstleistung / Karten</label>
+      <textarea id="service" name="Dienstleistung" placeholder="Zum Beispiel: Express-Grading für eine Pokémon-Karte" required></textarea>
+    </div>
+    <div class="checkbox">
+      <input id="confirm" type="checkbox" required />
+      <label for="confirm">Hiermit widerrufe ich den von mir abgeschlossenen Vertrag über die oben bezeichnete Dienstleistung.</label>
+    </div>
+    <div class="action-row">
+      <button class="button primary" type="submit">Widerruf bestätigen</button>
+      <button class="button" type="button" onclick="window.print()">Formular drucken</button>
+    </div>
+    <div class="form-status" id="form-status" role="status"></div>
+  </form>
+</section>
+
+<section class="panel">
+  <h2>Erklärung zum vorzeitigen Leistungsbeginn</h2>
+  <p>Diese beiden Erklärungen müssen im Bestellprozess getrennt, ausdrücklich und nicht vorangekreuzt bestätigt werden, wenn die Bearbeitung vor Ablauf der vierzehntägigen Widerrufsfrist beginnen soll:</p>
+  <div class="notice"><strong>1.</strong> Ich verlange ausdrücklich, dass vor Ablauf der Widerrufsfrist mit der beauftragten Grading-Dienstleistung begonnen wird, sobald meine Karte eingegangen ist und alle Bearbeitungsvoraussetzungen vorliegen.</div>
+  <div class="notice"><strong>2.</strong> Mir ist bekannt, dass ich bei einem Widerruf nach Beginn der Dienstleistung unter den gesetzlichen Voraussetzungen Wertersatz für bereits erbrachte Leistungen leisten muss und dass mein Widerrufsrecht bei vollständiger Vertragserfüllung erlischt.</div>
+</section>
+</main>
+  <footer class="legal-footer">
+    <div class="legal-footer-inner">
+      <span>© 2026 GR8 · FUCODE Projects – Future Consulting & Development Unternehmergesellschaft (haftungsbeschränkt)</span>
+      <nav aria-label="Rechtliche Informationen"><a href="agb.html">AGB</a> · <a href="widerruf.html">Widerruf</a> · <a href="impressum.html">Impressum</a></nav>
+    </div>
+  </footer>
+  <script>
+(function () {
+  const form = document.getElementById('withdrawal-form');
+  const status = document.getElementById('form-status');
+  const targetEmail = 'RECHT@IHRE-DOMAIN.DE';
+  form.addEventListener('submit', function (event) {
+    if (targetEmail.includes('IHRE-DOMAIN')) {
+      event.preventDefault();
+      status.style.display = 'block';
+      status.textContent = 'Die Empfänger-E-Mail-Adresse wurde noch nicht eingerichtet. Bitte senden Sie den Widerruf per Post oder ergänzen Sie vor Veröffentlichung die E-Mail-Adresse in widerruf.html.';
+      status.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  });
+})();
+</script>
+</body>
+</html>
