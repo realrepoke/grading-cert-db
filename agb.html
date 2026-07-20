@@ -21,7 +21,6 @@
   --muted: #aab1c0;
   --accent: #8f7cff;
   --accent-2: #43d7c7;
-  --warning: #ffd88a;
   --max: 980px;
 }
 * { box-sizing: border-box; }
@@ -60,7 +59,6 @@ main { padding: 72px 0 88px; }
 h1 { max-width: 820px; margin: 20px 0 12px; font-size: clamp(2.2rem, 7vw, 4.6rem); line-height: .98; letter-spacing: -.055em; }
 .lead { max-width: 760px; margin: 0; color: var(--muted); font-size: 1.08rem; }
 .meta { margin-top: 18px; color: var(--muted); font-size: .88rem; }
-.notice { margin: 26px 0; padding: 18px 20px; border: 1px solid rgba(255,216,138,.35); background: rgba(255,216,138,.075); border-radius: 16px; color: #ffe9b9; }
 .panel { margin: 18px 0; padding: clamp(22px, 4vw, 38px); border: 1px solid var(--border); background: var(--panel); border-radius: 24px; box-shadow: 0 20px 70px rgba(0,0,0,.24); }
 h2 { margin: 0 0 16px; font-size: clamp(1.35rem, 4vw, 2rem); letter-spacing: -.035em; }
 h3 { margin: 28px 0 8px; font-size: 1.08rem; }
@@ -96,12 +94,27 @@ input:focus, textarea:focus { outline: 2px solid rgba(143,124,255,.65); outline-
   .legal-footer-inner { padding: 24px 0; align-items: flex-start; flex-direction: column; }
 }
 @media print {
-  .topbar, .legal-footer, .action-row, .notice.setup-note { display: none !important; }
+  .topbar, .legal-footer, .action-row { display: none !important; }
   body { color: #000; background: #fff; }
   main { width: 100%; padding: 0; }
   .panel { border: 0; box-shadow: none; padding: 0; }
   h1 { font-size: 30pt; }
 }
+
+  /* Einheitliche schwarze Kopfzeile */
+  .site-header {
+    background: #000 !important;
+    border-bottom: 1px solid rgba(255,255,255,.16) !important;
+    box-shadow: 0 8px 30px rgba(0,0,0,.28);
+    backdrop-filter: none !important;
+  }
+  .site-header .logo,
+  .site-header .logo-word,
+  .site-header .logo-sub,
+  .site-header .nav-links a {
+    color: #fff !important;
+  }
+  .site-header .logo-sub { opacity: .78; }
 </style>
   
 </head>
@@ -128,7 +141,6 @@ input:focus, textarea:focus { outline: 2px solid rgba(143,124,255,.65); outline-
       <a href="index.html#zertifikat">Zertifikat prüfen</a>
       <a href="index.html#faq">FAQ</a>
     </nav>
-    <a href="https://buy.stripe.com/PLACEHOLDER" class="btn btn-primary btn-sm">Jetzt graden</a>
   </div>
 </header>
   <main>
